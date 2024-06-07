@@ -8,9 +8,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class mypage extends AppCompatActivity {
@@ -127,28 +129,12 @@ public class mypage extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("설정");
 
-        String[] options = {"알림", "전화번호 변경", "비밀번호 변경", "회원 탈퇴"};
-        builder.setItems(options, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                switch (which) {
-                    case 0:
-                        // 알림 옵션 클릭 시
-                        break;
-                    case 1:
-                        // 전화번호 변경 옵션 클릭 시
-                        break;
-                    case 2:
-                        // 비밀번호 변경 옵션 클릭 시
-                        break;
-                    case 3:
-                        // 회원 탈퇴 옵션 클릭 시
-                        break;
-                }
-            }
-        });
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_settings, null);
+        builder.setView(dialogView);
 
-        builder.setPositiveButton("완료", null);
+        builder.setPositiveButton("확인", null);
+        builder.setNegativeButton("취소", null);
 
         AlertDialog dialog = builder.create();
         dialog.show();
