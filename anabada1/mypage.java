@@ -180,7 +180,7 @@ public class mypage extends AppCompatActivity {
             }
         });
 
-        builder.setPositiveButton("완료", null);
+        builder.setPositiveButton("취소", null);
 
         AlertDialog dialog = builder.create();
 
