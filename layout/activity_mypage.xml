@@ -9,7 +9,53 @@
     android:background="#FFFFFF"
     tools:context=".mypage">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:background="#00000000"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="나의 정보"
+            android:textSize="28sp"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:gravity="end">
+
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="0dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="Alarm Button"
+                app:srcCompat="@drawable/setting" />
+
+        </LinearLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
+
     <ScrollView
+        android:layout_marginTop="-13dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -57,6 +103,7 @@
                 android:layout_marginBottom="8dp" />
 
             <Button
+                android:id="@+id/push_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="등록 내역"
@@ -74,6 +121,7 @@
                 android:layout_marginBottom="8dp" />
 
             <Button
+                android:id="@+id/customer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="고객센터"
@@ -91,6 +139,7 @@
                 android:layout_marginBottom="8dp" />
 
             <Button
+                android:id="@+id/logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="로그아웃"

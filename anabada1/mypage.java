@@ -2,7 +2,6 @@ package com.example.anabada1;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -52,36 +51,36 @@ public class mypage extends AppCompatActivity {
             }
         });
 
-        // 프로필 보기 버튼 클릭 시 다이얼로그 표시
-        Button showProfileButton = findViewById(R.id.show_profile_button);
-        showProfileButton.setOnClickListener(new View.OnClickListener() {
+        // Customer 버튼 클릭 시 customer 액티비티로 이동
+        Button customerButton = findViewById(R.id.customer);
+        customerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showProfileDialog();
+                startActivity(new Intent(mypage.this, customer.class));
             }
         });
 
-        // 제안 내역 버튼 클릭 시 offer 액티비티로 이동
-        Button offerButton = findViewById(R.id.offer_button);
-        offerButton.setOnClickListener(new View.OnClickListener() {
+        // 로그아웃 버튼 클릭 시 확인 다이얼로그 표시
+        Button logoutButton = findViewById(R.id.logout);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(mypage.this, offer.class));
+                showLogoutDialog();
             }
         });
     }
 
-    private void showProfileDialog() {
+    private void showLogoutDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("내 프로필");
-
-        LayoutInflater inflater = this.getLayoutInflater();
-        View dialogView = inflater.inflate(R.layout.seeprofile, null);
-        builder.setView(dialogView);
-
-        builder.setPositiveButton("OK", null);
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
+        builder.setMessage("로그아웃하시겠습니까?")
+                .setPositiveButton("네", (dialog, which) -> {
+                    // 로그인 액티비티로 이동
+                    startActivity(new Intent(mypage.this, login.class));
+                })
+                .setNegativeButton("아니요", (dialog, which) -> {
+                    // 다이얼로그 닫기
+                    dialog.dismiss();
+                });
+        builder.create().show();
     }
 }
