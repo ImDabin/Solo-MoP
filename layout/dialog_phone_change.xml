@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전화번호 변경"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/phone_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:inputType="phone"
+            android:hint="전화번호 입력"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/send_verification_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/littleskyblue"
+            android:text="인증번호 전송"
+            android:layout_gravity="end"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+    <EditText
+        android:id="@+id/injnumber"
+        android:layout_width="wrap_content"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="인증번호"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/injcheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/littleskyblue"
+        android:text="인증"
+        android:layout_gravity="end"
+        android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/changenumbercheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="변경하기"
+        android:backgroundTint="@color/littleskyblue"
+        android:layout_marginBottom="8dp"
+        android:textColor="@android:color/white"/>
+</LinearLayout>

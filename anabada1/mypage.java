@@ -7,12 +7,13 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
-
+import android.widget.Switch;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class mypage extends AppCompatActivity {
@@ -133,10 +134,67 @@ public class mypage extends AppCompatActivity {
         View dialogView = inflater.inflate(R.layout.dialog_settings, null);
         builder.setView(dialogView);
 
-        builder.setPositiveButton("확인", null);
-        builder.setNegativeButton("취소", null);
+        Switch notificationSwitch = dialogView.findViewById(R.id.notification_switch);
+        notificationSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            // 스위치 상태 변경 시 처리할 로직 추가
+        });
+
+        Button phoneChangeButton = dialogView.findViewById(R.id.phone_change_button);
+        phoneChangeButton.setOnClickListener(v -> showPhoneChangeDialog());
+
+        builder.setPositiveButton("완료", null);
 
         AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void showPhoneChangeDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("전화번호 변경");
+
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_phone_change, null);
+        builder.setView(dialogView);
+
+        EditText phoneNumberEditText = dialogView.findViewById(R.id.phone_input);
+        EditText verificationCodeEditText = dialogView.findViewById(R.id.injnumber);
+        Button sendVerificationButton = dialogView.findViewById(R.id.send_verification_button);
+        Button verifyButton = dialogView.findViewById(R.id.injcheck);
+        Button changeButton = dialogView.findViewById(R.id.changenumbercheck);
+
+        sendVerificationButton.setOnClickListener(v -> {
+            String phoneNumber = phoneNumberEditText.getText().toString();
+            if (!phoneNumber.isEmpty()) {
+                Toast.makeText(this, "인증번호가 전송되었습니다.", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "전화번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        verifyButton.setOnClickListener(v -> {
+            String verificationCode = verificationCodeEditText.getText().toString();
+            if (!verificationCode.isEmpty()) {
+                Toast.makeText(this, "인증되었습니다.", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "인증번호를 입력하세요.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.setPositiveButton("완료", null);
+
+        AlertDialog dialog = builder.create();
+
+        changeButton.setOnClickListener(v -> {
+            String phoneNumber = phoneNumberEditText.getText().toString();
+            String verificationCode = verificationCodeEditText.getText().toString();
+            if (!phoneNumber.isEmpty() && !verificationCode.isEmpty()) {
+                Toast.makeText(this, "변경되었습니다.", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            } else {
+                Toast.makeText(this, "인증을 완료해주세요.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         dialog.show();
     }
 

@@ -2,63 +2,85 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#7CADE7"
     android:orientation="vertical"
     android:padding="16dp">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="12dp"
         android:layout_marginBottom="8dp"
-        android:background="?android:attr/selectableItemBackground">
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="알림"
-            android:textSize="16sp"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
 
         <Switch
             android:id="@+id/notification_switch"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
 
     <Button
+        android:id="@+id/phone_change_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="left|center_vertical"
+        android:padding="12dp"
         android:text="전화번호 변경"
-        android:textSize="16sp"
-        android:padding="12dp"
-        android:background="?android:attr/selectableItemBackground"
-        android:layout_marginBottom="8dp"
         android:textColor="@android:color/black"
-        android:gravity="left|center_vertical"/>
+        android:textSize="16sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="left|center_vertical"
+        android:padding="12dp"
         android:text="비밀번호 변경"
-        android:textSize="16sp"
-        android:padding="12dp"
-        android:background="?android:attr/selectableItemBackground"
-        android:layout_marginBottom="8dp"
         android:textColor="@android:color/black"
-        android:gravity="left|center_vertical"/>
+        android:textSize="16sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="회원 탈퇴"
-        android:textSize="16sp"
-        android:padding="12dp"
-        android:background="?android:attr/selectableItemBackground"
         android:layout_marginBottom="8dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="left|center_vertical"
+        android:padding="12dp"
+        android:text="회원 탈퇴"
         android:textColor="@android:color/black"
-        android:gravity="left|center_vertical"/>
+        android:textSize="16sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
 
 </LinearLayout>
