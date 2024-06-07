@@ -3,6 +3,7 @@ package com.example.anabada1;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -142,6 +143,12 @@ public class mypage extends AppCompatActivity {
         Button phoneChangeButton = dialogView.findViewById(R.id.phone_change_button);
         phoneChangeButton.setOnClickListener(v -> showPhoneChangeDialog());
 
+        Button passwordChangeButton = dialogView.findViewById(R.id.password_change_button);
+        passwordChangeButton.setOnClickListener(v -> showChangePasswordDialog());
+
+        Button deleteAccountButton = dialogView.findViewById(R.id.delete_account_button);
+        deleteAccountButton.setOnClickListener(v -> showDeleteAccountDialog());
+
         builder.setPositiveButton("완료", null);
 
         AlertDialog dialog = builder.create();
@@ -192,6 +199,105 @@ public class mypage extends AppCompatActivity {
                 dialog.dismiss();
             } else {
                 Toast.makeText(this, "인증을 완료해주세요.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        dialog.show();
+    }
+
+    private void showChangePasswordDialog() {
+        // 비밀번호 변경 다이얼로그 표시
+        AlertDialog.Builder builder = new AlertDialog.Builder(mypage.this);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_password_change, null);
+        builder.setView(dialogView);
+
+        EditText currentPasswordEditText = dialogView.findViewById(R.id.nowpass);
+        EditText newPasswordEditText = dialogView.findViewById(R.id.chpass);
+        EditText confirmPasswordEditText = dialogView.findViewById(R.id.chpasscheck);
+        Button verifyButton = dialogView.findViewById(R.id.passcheck);
+        Button changePasswordButton = dialogView.findViewById(R.id.passchange);
+
+        // 현재 비밀번호 인증 로직
+        verifyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String currentPassword = currentPasswordEditText.getText().toString();
+                if (TextUtils.isEmpty(currentPassword)) {
+                    Toast.makeText(mypage.this, "현재 비밀번호를 입력하세요.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(mypage.this, "인증되었습니다.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        // 비밀번호 변경 로직
+        changePasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String newPassword = newPasswordEditText.getText().toString();
+                String confirmPassword = confirmPasswordEditText.getText().toString();
+
+                if (!newPassword.equals(confirmPassword)) {
+                    Toast.makeText(mypage.this, "새 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(mypage.this, "변경되었습니다.", Toast.LENGTH_SHORT).show();
+                    // 로그인 액티비티로 이동
+                    Intent intent = new Intent(mypage.this, login.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
+
+        builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void showDeleteAccountDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mypage.this);
+        LayoutInflater inflater = getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.dialog_delete_account, null);
+        builder.setView(dialogView);
+
+        EditText passwordEditText = dialogView.findViewById(R.id.delete_account_password);
+        Button confirmButton = dialogView.findViewById(R.id.delete_account_confirm);
+        Button cancelButton = dialogView.findViewById(R.id.delete_account_cancel);
+
+        AlertDialog dialog = builder.create();
+
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String password = passwordEditText.getText().toString();
+
+                if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(mypage.this, "비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                } else {
+                    // 비밀번호 확인 로직 (예: 서버 통신)
+                    // 비밀번호가 맞다고 가정하고, 회원 탈퇴 처리
+                    Toast.makeText(mypage.this, "회원 탈퇴가 완료되었습니다.", Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
+                    // 로그인 액티비티로 이동
+                    Intent intent = new Intent(mypage.this, login.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
             }
         });
 

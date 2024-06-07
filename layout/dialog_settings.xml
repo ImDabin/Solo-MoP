@@ -54,6 +54,7 @@
         android:background="#000000" />
 
     <Button
+        android:id="@+id/password_change_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -69,6 +70,7 @@
         android:background="#000000" />
 
     <Button
+        android:id="@+id/delete_account_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -82,5 +84,4 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#000000" />
-
 </LinearLayout>

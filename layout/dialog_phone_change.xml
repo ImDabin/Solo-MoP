@@ -47,23 +47,23 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/injnumber"
-        android:layout_width="wrap_content"
-        android:layout_weight="2"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:hint="인증번호"
-        android:layout_marginBottom="16dp"/>
+        <EditText
+            android:id="@+id/injnumber"
+            android:layout_width="wrap_content"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="인증번호"
+            android:layout_marginBottom="16dp"/>
 
-    <Button
-        android:id="@+id/injcheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/littleskyblue"
-        android:text="인증"
-        android:layout_gravity="end"
-        android:layout_marginBottom="16dp"/>
+        <Button
+            android:id="@+id/injcheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/littleskyblue"
+            android:text="인증"
+            android:layout_gravity="end"
+            android:layout_marginBottom="16dp"/>
 
     </LinearLayout>
 
