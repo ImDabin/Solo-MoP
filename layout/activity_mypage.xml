@@ -32,21 +32,17 @@
             android:layout_gravity="end"
             android:gravity="end">
 
-
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/setting_button"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:padding="0dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="10dp"
                 android:scaleType="centerCrop"
-                android:contentDescription="Alarm Button"
+                android:contentDescription="Setting Button"
                 app:srcCompat="@drawable/setting" />
-
         </LinearLayout>
-
-
     </androidx.appcompat.widget.Toolbar>
 
     <View

@@ -1,10 +1,13 @@
 package com.example.anabada1;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,7 +54,43 @@ public class mypage extends AppCompatActivity {
             }
         });
 
-        // Customer 버튼 클릭 시 customer 액티비티로 이동
+        // 프로필 보기 버튼 클릭 시 다이얼로그 표시
+        Button showProfileButton = findViewById(R.id.show_profile_button);
+        showProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showProfileDialog();
+            }
+        });
+
+        // 설정 버튼 클릭 시 다이얼로그 표시
+        ImageButton settingButton = findViewById(R.id.setting_button);
+        settingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showSettingDialog();
+            }
+        });
+
+        // 제안 내역 버튼 클릭 시 offer 액티비티로 이동
+        Button offerButton = findViewById(R.id.offer_button);
+        offerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mypage.this, offer.class));
+            }
+        });
+
+        // 등록 내역 버튼 클릭 시 등록 내역 액티비티로 이동
+        Button registerButton = findViewById(R.id.push_button);
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mypage.this, push.class));
+            }
+        });
+
+        // 고객센터 버튼 클릭 시 customer 액티비티로 이동
         Button customerButton = findViewById(R.id.customer);
         customerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,17 +109,64 @@ public class mypage extends AppCompatActivity {
         });
     }
 
+    private void showProfileDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("내 프로필");
+
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.seeprofile, null);
+        builder.setView(dialogView);
+
+        builder.setPositiveButton("OK", null);
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void showSettingDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("설정");
+
+        String[] options = {"알림", "전화번호 변경", "비밀번호 변경", "회원 탈퇴"};
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case 0:
+                        // 알림 옵션 클릭 시
+                        break;
+                    case 1:
+                        // 전화번호 변경 옵션 클릭 시
+                        break;
+                    case 2:
+                        // 비밀번호 변경 옵션 클릭 시
+                        break;
+                    case 3:
+                        // 회원 탈퇴 옵션 클릭 시
+                        break;
+                }
+            }
+        });
+
+        builder.setPositiveButton("완료", null);
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
     private void showLogoutDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("로그아웃하시겠습니까?")
-                .setPositiveButton("네", (dialog, which) -> {
-                    // 로그인 액티비티로 이동
-                    startActivity(new Intent(mypage.this, login.class));
-                })
-                .setNegativeButton("아니요", (dialog, which) -> {
-                    // 다이얼로그 닫기
-                    dialog.dismiss();
+                .setPositiveButton("아니요", null)
+                .setNegativeButton("네", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Intent intent = new Intent(mypage.this, login.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                        finish();
+                    }
                 });
-        builder.create().show();
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }
