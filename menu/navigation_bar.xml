@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        android:title="홈"
+        android:orderInCategory="1"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/offer"
+        android:icon="@drawable/ic_pop"
+        android:title="제안"
+        android:orderInCategory="2"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/push"
+        android:icon="@drawable/ic_push"
+        android:title="등록"
+        android:orderInCategory="3"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/chat"
+        android:icon="@drawable/ic_chat"
+        android:title="채팅"
+        android:orderInCategory="4"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/my"
+        android:icon="@drawable/ic_my"
+        android:title="나의 정보"
+        android:orderInCategory="5"
+        app:showAsAction="always"/>
+
+</menu>

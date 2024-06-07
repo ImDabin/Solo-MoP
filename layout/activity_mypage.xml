@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    tools:context=".mypage">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="프로필 보기"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginBottom="8dp"
+                android:textColor="@android:color/black"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="제안 내역"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginBottom="8dp"
+                android:textColor="@android:color/black"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="등록 내역"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginBottom="8dp"
+                android:textColor="@android:color/black"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="고객센터"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginBottom="8dp"
+                android:textColor="@android:color/black"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="로그아웃"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginBottom="8dp"
+                android:textColor="@android:color/black"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="버전정보 1.1.1"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@android:color/black"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="개인정보 처리 방침"
+                android:textSize="16sp"
+                android:padding="12dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@android:color/black"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="left|center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="제1조 개인정보의 처리목적\n\n&#x2460; 정부24는 개인정보 보호법 제32조에 따라 등록&#x00B7;공개하는 개인정보파일의 처리 목적은 다음과 같습니다.\n\n1. 개인정보 파일명 : 정부24 회원정보\n가. 개인정보의 처리목적 : 회원가입, 회원제 서비스 이용 및 제한적 본인 확인절차에 따른 본인확인, 개인식별, 부정이용방지, 비인가 사용방지, 가입 의사 확인, 만 14세 미만 아동 개인정보 수집 시 법정대리인 동의여부 확인, 추후 법정대리인 본인확인, 분쟁 조정을 위한 기록보존, 불만처리 등 민원처리, 고지사항 전달 등\n나. 수집방법 : 회원가입, 비회원 신청\n다. 보유근거 : 정보주체의 동의, 전자정부법 시행령 제90조\n라. 보유기간 : 탈퇴 후 5일까지\n\n2. 개인정보 파일명 : 전자민원 신청이력(상담이력 포함)\n가. 개인정보의 처리목적 : 민원 신청서에 포함된 개인정보는 민원 처리에 관한 법률 제12조의2에 의한 민원사무 처리를 위한 목적으로 민원 접수기관 및 처리기관에서 이용 (민원발급서비스, 민원열람서비스, 최근 신청이력)\n나. 수집방법 : 전자민원 신청\n다. 보유근거 : 정보주체의 동의, 전자정부법 시행령 제90조\n라. 보유기간 : 3년\n\n3. 개인정보 파일명 : 전자민원 증명서(신청서 및 발급물)\n가. 개인정보의 처리목적 : 민원 신청서에 포함된 개인정보는 민원 처리에 관한 법률 제12조의2에 의한 민원사무 처리를 위한 목적으로 민원 접수기관 및 처리기관에서 이용 (민원발급서비스, 민원열람서비스, 최근 신청이력)\n나. 수집방법 : 전자민원 신청\n다. 보유근거 : 정보주체의 동의, 전자정부법 시행령 제90조\n라. 보유기간 : 180일\n\n4. 개인정보 파일명 : 생활정보\n가. 개인정보의 처리목적 : 정부24 회원의 경우, 전자정부법 제9조의2에 의한 본인의 생활정보 열람\n나. 수집방법 : 정보주체 동의 후 인증서 로그인\n다. 보유근거 : 정보주체의 동의, 전자정부법 제9조의2\n라. 보유기간 : 1일\n\n제2조 개인정보 수집항목\n\n&#x2460; 정부24는 다음의 개인정보 항목을 처리하고 있습니다.\n\n1. &lt; 정부24 회원정보 &gt;\n- 회원정보\n가. 필수항목 : 이름, 집주소, 핸드폰(연락처), E-Mail, 주민등록번호, 외국인등록번호\n- 법정대리인(14세미만 보호자 등)\n가. 필수항목 : 이름, 집주소, 핸드폰(연락처), E-Mail\n- 비회원정보\n가. 필수항목 : 이름, 주민등록번호, 외국인등록번호\n\n2. &lt; 전자민원 신청이력(상담이력 포함) &gt;\n가. 필수항목 : 이름, 집연락처, 집주소, 핸드폰(연락처), E-Mail, 주민등록번호, 외국인등록번호, 기타(계좌번호, 상담정보(녹취자료 포함))\n\n3. &lt; 전자민원 증명서(신청서 및 발급물) &gt;\n가. 필수항목 : 이름, 집연락처, 집주소, 핸드폰(연락처), E-Mail, 직장연락처, 주민등록번호, 외국인등록번호\n\n4. &lt; 생활정보 &gt;\n가. 필수항목 : 집주소, 주민등록번호, 외국인등록번호, 기타(서비스코드(기관), 일련번호, 생활정보, 자동차등록번호, 주소(동/호수), 공적연금 가입 여부)\n\n더 자세한 사항은 아래 링크에서 확인하실 수 있습니다.\nhttps://www.gov.kr/portal/privacy"
+                android:textSize="14sp"
+                android:padding="12dp"
+                android:autoLink="web"
+                android:textColor="@android:color/black"
+                android:background="?android:attr/selectableItemBackground"
+                android:gravity="left|center_vertical" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:itemBackground="@color/skyblue"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/navigation_bar" />
+
+</LinearLayout>
