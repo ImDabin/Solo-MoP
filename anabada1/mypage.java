@@ -2,8 +2,12 @@ package com.example.anabada1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -47,5 +51,37 @@ public class mypage extends AppCompatActivity {
                 }
             }
         });
+
+        // 프로필 보기 버튼 클릭 시 다이얼로그 표시
+        Button showProfileButton = findViewById(R.id.show_profile_button);
+        showProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showProfileDialog();
+            }
+        });
+
+        // 제안 내역 버튼 클릭 시 offer 액티비티로 이동
+        Button offerButton = findViewById(R.id.offer_button);
+        offerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mypage.this, offer.class));
+            }
+        });
+    }
+
+    private void showProfileDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("내 프로필");
+
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.seeprofile, null);
+        builder.setView(dialogView);
+
+        builder.setPositiveButton("OK", null);
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

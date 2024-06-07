@@ -21,6 +21,7 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/show_profile_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="프로필 보기"
@@ -38,6 +39,7 @@
                 android:layout_marginBottom="8dp" />
 
             <Button
+                android:id="@+id/offer_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="제안 내역"
