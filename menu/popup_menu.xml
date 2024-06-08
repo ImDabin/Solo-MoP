@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_add"
+        android:title="등록"
+        android:icon="@drawable/poppop"/>
+    <item
+        android:id="@+id/action_edit"
+        android:title="수정"
+        android:icon="@drawable/poppop"/>
+    <item
+        android:id="@+id/action_delete"
+        android:title="삭제"
+        android:icon="@drawable/poppop"/>
+</menu>
