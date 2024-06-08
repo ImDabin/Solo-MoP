@@ -5,22 +5,250 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
-    android:background="#00000000"
     tools:context=".offer">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="제안"/>
 
-    <FrameLayout
-        android:id="@+id/containers"
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#00000000"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            app:srcCompat="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="홈"
+            android:textSize="28sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:gravity="end">
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:contentDescription="Search Button"
+                android:padding="0dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/search" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:contentDescription="Alarm Button"
+                android:padding="0dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/alarm" />
+
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="101dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="10dp"
+        app:srcCompat="@drawable/kind" />
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="#FFFFFF"
-        tools:ignore="Suspicious0dp" />
+        android:background="#FFFFFF">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+
+
+
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="#F4F8FB">
+
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    app:srcCompat="@drawable/fan"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center|start"
+                    app:srcCompat="@drawable/fansul" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="#F4F8FB">
+
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    app:srcCompat="@drawable/mic"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="-45dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center|start"
+                    app:srcCompat="@drawable/micsul" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFFFFF" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="#F4F8FB">
+
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    app:srcCompat="@drawable/keyboard"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="-40dp"
+                    android:layout_gravity="center|start"
+                    app:srcCompat="@drawable/keyboardsul" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="#F4F8FB">
+
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    app:srcCompat="@drawable/playstation"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="-30dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center|start"
+                    app:srcCompat="@drawable/pssul" />
+            </LinearLayout>
+
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFFFFF" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="#F4F8FB">
+
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    app:srcCompat="@drawable/soundbar"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="-60dp"
+                    android:layout_gravity="center|start"
+                    app:srcCompat="@drawable/soundsul" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="#F4F8FB">
+
+                <ImageView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    app:srcCompat="@drawable/speaker"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center|start"
+                    app:srcCompat="@drawable/speaksul" />
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -30,5 +258,6 @@
         app:itemBackground="@color/skyblue"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/navigation_bar" />
+
 
 </LinearLayout>
